@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/skinfile">
+        <file>skin/default.qss</file>
+    </qresource>
+    <qresource prefix="/pngfile"/>
+</RCC>
