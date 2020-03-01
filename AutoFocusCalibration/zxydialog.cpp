@@ -3,20 +3,25 @@
 ZXYDialog::ZXYDialog(const QPointF &pt,QWidget *parent):QDialog(parent)
 {
     this->setMinimumSize(400,200);
+    this->m_pt=pt;
 
-    this->m_llTips[0]=new QLabel(tr("测距值"));
-    this->m_llTips[1]=new QLabel(tr("编码器值"));
+    this->m_llTips[0]=new QLabel(tr("Distance(m)"));
+    this->m_llTips[0]->setAlignment(Qt::AlignCenter);
+    this->m_llTips[1]=new QLabel(tr("Encoder(Pulse)"));
+    this->m_llTips[1]->setAlignment(Qt::AlignCenter);
 
     this->m_llXY[0]=new QLabel(QString::number(pt.x()));
+    this->m_llXY[0]->setAlignment(Qt::AlignCenter);
     this->m_llXY[1]=new QLabel(QString::number(pt.y()));
+    this->m_llXY[1]->setAlignment(Qt::AlignCenter);
 
     this->m_tb[0]=new QToolButton;
-    this->m_tb[0]->setText(tr("召唤"));
-    QObject::connect(this->m_tb[0],SIGNAL(clicked()),this,SLOT(ZSlotCallData()));
+    this->m_tb[0]->setText(tr("DEL"));
+    QObject::connect(this->m_tb[0],SIGNAL(clicked()),this,SLOT(accept()));
 
     this->m_tb[1]=new QToolButton;
-    this->m_tb[1]->setText(tr("关闭"));
-    QObject::connect(this->m_tb[1],SIGNAL(clicked()),this,SLOT(accept()));
+    this->m_tb[1]->setText(tr("OK"));
+    QObject::connect(this->m_tb[1],SIGNAL(clicked()),this,SLOT(reject()));
 
     this->m_gridLayout=new QGridLayout;
     this->m_gridLayout->addWidget(this->m_llTips[0],0,0);
@@ -41,7 +46,7 @@ ZXYDialog::~ZXYDialog()
 
     delete this->m_gridLayout;
 }
-void ZXYDialog::ZSlotCallData()
+QPointF ZXYDialog::ZGetPoint() const
 {
-    QMessageBox::information(this,tr("Tips"),tr("召唤数据代码暂未实现"));
+    return this->m_pt;
 }

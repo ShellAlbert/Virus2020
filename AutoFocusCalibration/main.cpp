@@ -1,7 +1,6 @@
-#include "maindialog.h"
+#include "zmainui.h"
 #include <QApplication>
 #include <QFile>
-#include <QtNetwork/QNetworkInterface>
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
@@ -19,7 +18,6 @@ int main(int argc, char *argv[])
     }
 
 
-
     //load qss skin.
     QFile fileQss(":/skinfile/skin/default.qss");
     if(fileQss.open(QIODevice::ReadOnly))
@@ -29,16 +27,8 @@ int main(int argc, char *argv[])
         fileQss.close();
     }
 
-    MainDialog w;
-    w.showMaximized();
+    MainUI ui;
+    ui.showMaximized();
 
-    QList<QHostAddress> list =QNetworkInterface::allAddresses();
-    foreach (QHostAddress address, list)
-    {
-       if(address.protocol() ==QAbstractSocket::IPv4Protocol)
-       {
-           qDebug()<<address.toString();
-       }
-    }
     return app.exec();
 }

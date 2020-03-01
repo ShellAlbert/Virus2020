@@ -12,13 +12,14 @@ public:
     ZXYDialog(const QPointF &pt,QWidget *parent=0);
     ~ZXYDialog();
 
-private slots:
-    void ZSlotCallData();
+    QPointF ZGetPoint() const;
 private:
     QLabel *m_llTips[2];
     QLabel *m_llXY[2];
     QToolButton *m_tb[2];
     QGridLayout *m_gridLayout;
+private:
+    QPointF  m_pt;
 };
 
 #endif // ZXYDIALOG_H

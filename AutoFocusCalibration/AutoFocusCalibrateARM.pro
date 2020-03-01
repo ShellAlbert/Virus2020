@@ -26,14 +26,16 @@ CONFIG += c++11
 
 SOURCES += \
         main.cpp \
-        maindialog.cpp \
+        zmainui.cpp \
         zbuttondialog.cpp \
         zxydialog.cpp \
+        zdatamdydialog.cpp \
 
 HEADERS += \
-        maindialog.h \
+        zmainui.h \
         zbuttondialog.h \
-        zxydialog.h
+        zxydialog.h \
+        zdatamdydialog.h
 
 RESOURCES += \
     appres.qrc

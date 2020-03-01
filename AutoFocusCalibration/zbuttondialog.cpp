@@ -40,21 +40,31 @@ void ZButtonDialog::ZSlotBtnClicked()
 ZDataDialog::ZDataDialog(QWidget *parent):ZButtonDialog(parent)
 {
     this->m_btnLoad=new QToolButton;
-    this->m_btnLoad->setText(tr("载入"));
+    this->m_btnLoad->setText(tr("Load"));
 
     this->m_btnMdy=new QToolButton;
-    this->m_btnMdy->setText(tr("修改"));
+    this->m_btnMdy->setText(tr("Modify"));
 
     this->m_btnSave=new QToolButton;
-    this->m_btnSave->setText(tr("存档"));
+    this->m_btnSave->setText(tr("Save"));
+
+    this->m_btnCallOne=new QToolButton;
+    this->m_btnCallOne->setText(tr("CallOne"));
+
+    this->m_btnCallAll=new QToolButton;
+    this->m_btnCallAll->setText(tr("CallAll"));
 
     this->ZAddButton(this->m_btnLoad,1);
     this->ZAddButton(this->m_btnMdy,2);
     this->ZAddButton(this->m_btnSave,3);
+    this->ZAddButton(this->m_btnCallOne,3);
+    this->ZAddButton(this->m_btnCallAll,3);
 }
 ZDataDialog::~ZDataDialog()
 {
     delete this->m_btnLoad;
     delete this->m_btnMdy;
     delete this->m_btnSave;
+    delete this->m_btnCallOne;
+    delete this->m_btnCallAll;
 }

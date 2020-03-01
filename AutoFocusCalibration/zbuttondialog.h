@@ -28,6 +28,9 @@ public:
     ZDataDialog(QWidget *parent=0);
     ~ZDataDialog();
 private:
+    QToolButton *m_btnCallOne;
+    QToolButton *m_btnCallAll;
+
     QToolButton *m_btnLoad;
     QToolButton *m_btnSave;
     QToolButton *m_btnMdy;
