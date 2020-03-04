@@ -2,7 +2,7 @@
 #define ZVIDEOUI_H
 
 #include <QWidget>
-
+#include <QPainter>
 class ZVideoUI : public QWidget
 {
     Q_OBJECT
@@ -11,6 +11,7 @@ public:
 
 protected:
     QSize sizeHint() const;
+    void paintEvent(QPaintEvent *e);
 signals:
 
 public slots:

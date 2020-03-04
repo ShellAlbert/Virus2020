@@ -4,12 +4,13 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = P20_x64
 TEMPLATE = app
+
 
 # The following define makes your compiler emit warnings if you use
 # any feature of Qt which has been marked as deprecated (the exact warnings
@@ -29,13 +30,21 @@ SOURCES += \
         ui/zmainui.cpp \
     ui/zvideoui.cpp \
     ui/zbatteryui.cpp \
-    ui/zrssiui.cpp
+    ui/zrssiui.cpp \
+    thread/zcommunicatethread.cpp \
+    zgblparam.cpp \
+    zp20.cpp \
+    thread/ztimeoutscanthread.cpp
 
 HEADERS += \
         ui/zmainui.h \
     ui/zvideoui.h \
     ui/zbatteryui.h \
-    ui/zrssiui.h
+    ui/zrssiui.h \
+    thread/zcommunicatethread.h \
+    zgblparam.h \
+    zp20.h \
+    thread/ztimeoutscanthread.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

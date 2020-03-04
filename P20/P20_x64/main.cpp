@@ -1,11 +1,12 @@
-#include "ui/zmainui.h"
-#include <QApplication>
 
+#include <QApplication>
+#include "zp20.h"
 int main(int argc, char *argv[])
 {
-    QApplication a(argc, argv);
-    ZMainUI w;
-    w.show();
+    QApplication app(argc, argv);
 
-    return a.exec();
+    ZP20 p20;
+    p20.ZStart();
+
+    return app.exec();
 }
